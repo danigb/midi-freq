@@ -1,4 +1,5 @@
 node_modules/
+coverage/
 API.md
 dist
 tmp
