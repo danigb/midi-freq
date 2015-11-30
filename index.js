@@ -24,6 +24,6 @@ module.exports = function freq (tuning, midi) {
   if (arguments.length > 1) return freq(tuning)(midi)
 
   return function (m) {
-    return Math.pow(2, (m - 69) / 12) * tuning
+    return m > 0 && m < 128 ? Math.pow(2, (m - 69) / 12) * tuning : null
   }
 }

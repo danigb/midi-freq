@@ -1,6 +1,6 @@
 {
   "name": "midi.freq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get frequency of a midi note",
   "main": "index.js",
   "scripts": {
