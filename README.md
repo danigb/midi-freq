@@ -15,6 +15,8 @@ var freq = require('midi.freq')(440)
 freq(69) // => 440
 ```
 
+Basically it's just: `Math.pow(2, (midi - 69) / 12) * tuning` with a couple of goodies.
+
 This tiny (165 bytes) function is part of [tonal](https://github.com/danigb/tonal)
 
 ## API

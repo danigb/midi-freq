@@ -34,5 +34,6 @@
   "homepage": "https://github.com/danigb/midi.freq#readme",
   "devDependencies": {
     "vows": "^0.8.1"
-  }
+  },
+  "dependencies": {}
 }
