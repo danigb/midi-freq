@@ -3,20 +3,18 @@
  *
  * This function is currified so it can be partially applied (see examples)
  *
- * @name midi.freq
- * @function
  * @param {Float} tuning - the frequency of A4 (null means 440)
  * @param {Integer} midi - the midi number
  * @return {Float} the frequency of the note
  *
  * @example
  * // 69 midi is A4
- * midi.freq(null, 69) // => 440
- * midi.freq(444, 69) // => 444
+ * freq(null, 69) // => 440
+ * freq(444, 69) // => 444
  *
  * @example
  * // partially applied
- * var freq = require('midi.freq')(440)
+ * var freq = require('midi-freq')(440)
  * freq(69) // => 440
  */
 module.exports = function freq (tuning, midi) {
@@ -24,6 +22,6 @@ module.exports = function freq (tuning, midi) {
   if (arguments.length > 1) return freq(tuning)(midi)
 
   return function (m) {
-    return m > 0 && m < 128 ? Math.pow(2, (m - 69) / 12) * tuning : null
+    return m === 0 || (m > 0 && m < 128) ? Math.pow(2, (m - 69) / 12) * tuning : null
   }
 }
